@@ -6,7 +6,7 @@ description: >-
 
 # JPA는 어떻게 빈(empty) 객체의 영속성을 유지할까?
 
-### Problem
+## Problem
 
 {% code overflow="wrap" %}
 ```
@@ -14,7 +14,7 @@ description: >-
 ```
 {% endcode %}
 
-### As-is
+## As-is
 
 User에서 OneToMany로 Posts가 매핑되어 있다고 가정해보자, 아래 코드에서는 user.posts가 비어있으면 new list 를 선언해서 채워주고 다시 이 만들어준 하위 collection을 user에 set하는 방식으로 되어있다.
 
@@ -45,7 +45,7 @@ A collection with cascade="all-delete-orphan" was no longer referenced by the ow
 ```
 {% endcode %}
 
-### Cause
+## Cause
 
 Entity 객체에 OneToMany 매핑이 있을 때, 매핑된 Collection에 대해 새로운 값을 넣는 방식으로 갱신하면 참조가 끊어진다!! 새로운 Collection을 넣으면서 JPA 참조가 끊어지기 때문이다.
 
@@ -55,7 +55,7 @@ Entity 객체에 OneToMany 매핑이 있을 때, 매핑된 Collection에 대해 
 
 Repository에서 가지고 온 객체에 대해서 Collection이 비어 있다고 해도 이렇게 PersistentBag이라는 Collection Wrappper로 영속성을 유지한다.
 
-### To-be
+## To-be
 
 기존에 가지고 있던 Collection에 직접 갱신하는 방식으로 참조를 유지해주면서 수정해주면 문제를 해결할 수 있다
 
@@ -72,7 +72,7 @@ users.forEach(user -> {
 });
 ```
 
-### References
+## References
 
-* https://velog.io/@gnoesnooj/ERROR-A-collection-with-cascadeall-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance
-* https://ttl-blog.tistory.com/138
+* [https://velog.io/@gnoesnooj/ERROR-A-collection-with-cascadeall-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance](https://velog.io/@gnoesnooj/ERROR-A-collection-with-cascadeall-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance)
+* [https://ttl-blog.tistory.com/138](https://velog.io/@gnoesnooj/ERROR-A-collection-with-cascadeall-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instancehttps://velog.io/@gnoesnooj/ERROR-A-collection-with-cascadeall-delete-orphan-was-no-longer-referenced-by-the-owning-entity-instance)

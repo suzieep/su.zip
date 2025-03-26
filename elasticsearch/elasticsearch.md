@@ -21,11 +21,9 @@ ES는 데이터를 저장할 때 Inverted Index를 생성(색인) -> 빠른 검�
 
 텍스트를 Indexing하는 과정에서 Analyzer가 텍스트 분석을 하게된다.
 
-### ElasticSearch Analyzer Pipeline
+![ElasticSearch Analyzer Pipeline](https://github.com/suzieep/TIL/assets/61377122/4502420f-f1b0-4ac2-8101-8f862f4a4942)
 
-![image](https://github.com/suzieep/TIL/assets/61377122/4502420f-f1b0-4ac2-8101-8f862f4a4942)
-
-#### Char Filters
+### Char Filters
 
 입력된 원본의 텍스트를 분석에 필요한 형태로 변환(전처리)
 
@@ -36,7 +34,7 @@ ES는 데이터를 저장할 때 Inverted Index를 생성(색인) -> 빠른 검�
   * camelCase -> 사이에 공백 삽입
 * ...
 
-#### Tokenizer
+### Tokenizer
 
 입력 데이터를 설정된 기준에 따라 검색어 토큰으로 분리하는 역할
 
@@ -53,7 +51,7 @@ ES는 데이터를 저장할 때 Inverted Index를 생성(색인) -> 빠른 검�
   * ex) /hi/hello/bye -> /hi, /hi/hello, /hi/hello/bye
 * ...
 
-#### Token Filters
+### Token Filters
 
 분리된 토큰들에 다시 필터를 적용해서 실제로 검색에 쓰이는 검색어들로 최종 변환하는 역할
 
@@ -72,7 +70,7 @@ ES는 데이터를 저장할 때 Inverted Index를 생성(색인) -> 빠른 검�
   * ex) "I am Suzie" (size 2) => I am, am Suzie
 * ...
 
-**Stemmer**
+### **Stemmer**
 
 어간 추출, 형태소 분석
 
@@ -85,7 +83,9 @@ ES는 데이터를 저장할 때 Inverted Index를 생성(색인) -> 빠른 검�
 
 
 
-### Reference
+## References
 
-https://esbook.kimjmin.net/06-text-analysis\
-https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/ https://discuss.elastic.co/t/difference-between-analyzer-and-normalizer/205897/2 https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer
+* [https://esbook.kimjmin.net/06-text-analysis](https://esbook.kimjmin.net/06-text-analysis)
+* [https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/](https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/)
+* [https://discuss.elastic.co/t/difference-between-analyzer-and-normalizer/205897/2](https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/)
+* [https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer](https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer)

@@ -8,7 +8,7 @@
 
 ## @Transactional 동작 예시
 
-#### Case 1) outerMethod(@tr)가 같은 클래스에 있는 innerMethod를 호출할 때
+### Case 1) outerMethod(@tr)가 같은 클래스에 있는 innerMethod를 호출할 때
 
 ```java
 public class UserService {
@@ -131,7 +131,7 @@ public class SubService  {
 * 성능 최적화와 충돌 방지
 * default : false
 
-### References
+## References
 
-* https://hungseong.tistory.com/81
-* https://green-bin.tistory.com/79
+* [https://hungseong.tistory.com/81](https://hungseong.tistory.com/81)
+* [https://green-bin.tistory.com/79](https://green-bin.tistory.com/79)

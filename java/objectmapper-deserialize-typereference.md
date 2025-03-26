@@ -1,6 +1,6 @@
 # ObjectMapper로 제네릭 Deserialize 하기(TypeReference)
 
-### Problem
+## Problem
 
 이해없이 Jackson ObjectMapper로 Deserialize를 하다보면, 아래와 같은 Cast error와 마주칠 수 있다.
 
@@ -29,7 +29,7 @@ public User getUser(String jsonString){
 jsonString이 User로 Deserialize 되길 기대했지만 TypeReference는 User로 치환되지 않았다..ㅜ\
 
 
-### Cause
+## Cause
 
 TypeReference에 제네릭이 적용되지 않았다. 제네릭은 언제, 어떤 타입을 가지게 될까?
 
@@ -54,9 +54,9 @@ public Object getData(String jsonString){
 \
 
 
-### Solution
+## Solution
 
-#### 1. Type도 함께 넘겨주기
+### 1. Type도 함께 넘겨주기
 
 getData() 호출할 때 Type도 함께 넘겨주어 제네릭의 영향을 받지 않고 Deserialize를 해줄 수 있다.
 
@@ -76,7 +76,7 @@ public List<User> getUser(String jsonString){
 \
 
 
-#### 2. TypeReference으로 넘기기
+### 2. TypeReference으로 넘기기
 
 * TypeReference: 제네릭 타입 시스템에서 타입 정보를 런타임에 유지하기 위해 사용
 * Super Type Token 패턴 사용
@@ -100,7 +100,7 @@ TypeReference<List<User>> typeReference = new TypeReference<List<User>>() {};
 \
 
 
-#### 3. Object로 넘겨서, 받아오는 함수에서 타입 매핑
+### 3. Object로 넘겨서, 받아오는 함수에서 타입 매핑
 
 getData()에서 그대로 Object로 리턴하고, getUser()에서 convertValue를 한다. (ObjectMapper가 꽤 무겁기 때문에, 두 번이나 선언해서 사용하는 것은 좋아보이지 않는다!)
 
@@ -119,7 +119,7 @@ public List<User> getUser(String jsonString){
 \
 
 
-### Conclusion
+## Conclusion
 
 되는대로 코드를 짜다가(ㅠㅠ이러면 안돼!!!) 안되니까 찾아보기 시작했는데, 알아가다보니 Generic에 대한 이해가 부족해서 생긴 문제였다. 제네릭을 사용할 때는 Generic Type Erasure 때문에 Runtime 시점에는 제네릭 타입이 바보!가 된다는 사실을 잊지 말자!
 
@@ -127,6 +127,11 @@ public List<User> getUser(String jsonString){
 \
 
 
-### References
+## References
 
-https://stackoverflow.com/questions/6846244/jackson-and-generic-type-reference https://sungminhong.github.io/spring/superTypeToken/ https://velog.io/@happyjamy/Java-%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-TypeReference https://thecodinglog.github.io/java/2021/10/12/java-generic-type-reference.html https://www.baeldung.com/java-super-type-tokens https://stackoverflow.com/questions/11936620/jackson-deserialising-json-string-typereference-vs-typefactory-constructcoll
+* [https://stackoverflow.com/questions/6846244/jackson-and-generic-type-reference](https://stackoverflow.com/questions/6846244/jackson-and-generic-type-reference)
+* [https://sungminhong.github.io/spring/superTypeToken/ ](https://sungminhong.github.io/spring/superTypeToken/)
+* [https://velog.io/@happyjamy](https://velog.io/@happyjamy/Java-%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-TypeReference)
+* [https://thecodinglog.github.io/java/2021/10/12/java-generic-type-reference.html](https://thecodinglog.github.io/java/2021/10/12/java-generic-type-reference.html)
+* [https://www.baeldung.com/java-super-type-tokens](https://www.baeldung.com/java-super-type-tokens)
+* [https://stackoverflow.com/questions/11936620/jackson-deserialising-json-string-typereference-vs-typefactory-constructcoll](https://stackoverflow.com/questions/11936620/jackson-deserialising-json-string-typereference-vs-typefactory-constructcoll)

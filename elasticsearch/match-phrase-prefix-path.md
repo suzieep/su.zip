@@ -95,7 +95,9 @@ stackoverflow 에서 찾은 이유는 es client 버전과 es 버전이 맞지 �
 
 
 
-### Reference
+## References
 
-https://esbook.kimjmin.net/06-text-analysis\
-https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/ https://discuss.elastic.co/t/difference-between-analyzer-and-normalizer/205897/2 https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer
+* [https://esbook.kimjmin.net/06-text-analysis](https://esbook.kimjmin.net/06-text-analysis)
+* [https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/](https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/)
+* [https://discuss.elastic.co/t/difference-between-analyzer-and-normalizer/205897/2](https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/)
+* [https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer](https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer)

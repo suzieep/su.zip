@@ -1,6 +1,6 @@
 # ThreadLocal로 유저 정보 처리하기
 
-### Problem
+## Problem
 
 CRUD를 구현하다보면, api call을 한 유저 정보가 필요하다. 기존에 구현된 방식은 token이 들어오면 filter에서 토큰 정보를 parsing해서 api의 parameter에 조작해서 넣어주게 되어있었다.
 
@@ -22,7 +22,7 @@ public PageImpl<ResponseDto> getPosts(
 
 그리고 이렇게 되면,, 머리로는 알지만 코드 자체로는 어떤 값을 받는지 명세가 불분명해진다 ㅜ
 
-### Solution
+## Solution
 
 Spring Security를 사용하면 ThreadLocal을 사용한 Context를 제공하기 때문에, ThreadLocal을 직접 사용해서 유저 정보를 저장해서 사용하기로 했다.
 
@@ -51,7 +51,7 @@ public class UserContext {
 }
 ```
 
-### Conclusion
+## Conclusion
 
 기존에는 Detail한 유저정보가 필요하면 그때마다 조회해서 사용했는데, filter에서 넣을 때 한번에 조회해서 UserInfo에 정보를 채워두면 언제든지 가져다 쓸 수 있어서 좋았다.
 

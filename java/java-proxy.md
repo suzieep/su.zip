@@ -4,9 +4,9 @@
 
 * Spring AOP는 Runtime에 Proxy Instance가 동적으로 변경되는 다이나믹 프록시 기법으로 구현
 
-<figure><img src="../.gitbook/assets/7.png" alt=""><figcaption><p><a href="https://medium.com/@spac.valentin">https://medium.com/@spac.valentin</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/7.png" alt="" width="563"><figcaption><p><a href="https://medium.com/@spac.valentin">https://medium.com/@spac.valentin</a></p></figcaption></figure>
 
-##
+
 
 ## 1. JDK Dynamic Proxy
 
@@ -53,13 +53,16 @@ Java Reflection 패키지의 Proxy 클래스를 통해 생성된 Proxy 객체
 2. DI
    * Reflection으로 @Autowired 찾아서 주입
 
-\<aside> 📌
+{% code title=" 📌 @Retention" overflow="wrap" %}
+```
+: 어노테이션의 수명 주기 정의
+- SOURCE : 컴파일 시에만 어노테이션이 유효, 바이트 코드(.class)에 포함 X
+- CLASS : 바이트코드까지 어노테이션 유효, 런타임 포함 X
+- RUNTIME : 런타임에도 어노테이션 유효, Reflection으로 어노테이션 정보 동적 조회 </aside>
+```
+{% endcode %}
 
-@Retention - 어노테이션의 수명 주기 정의
 
-* SOURCE : 컴파일 시에만 어노테이션이 유효, 바이트 코드(.class)에 포함 X
-* CLASS : 바이트코드까지 어노테이션 유효, 런타임 포함 X
-* RUNTIME : 런타임에도 어노테이션 유효, Reflection으로 어노테이션 정보 동적 조회 \</aside>
 
 ## 2. CGLib
 

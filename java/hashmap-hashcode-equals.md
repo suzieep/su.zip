@@ -2,7 +2,7 @@
 
 ## **Object 기본 제공 메소드**
 
-#### **1. hashCode()**
+### **1. hashCode()**
 
 <div align="left"><figure><img src="../.gitbook/assets/1-.png" alt="" width="563"><figcaption></figcaption></figure></div>
 
@@ -10,7 +10,7 @@
 * **메모리 주소** 기반 전략
 * **int 값**
 
-#### **2. equals()**
+### **2. equals()**
 
 <div align="left"><figure><img src="../.gitbook/assets/2-.png" alt="" width="563"><figcaption></figcaption></figure></div>
 
@@ -103,11 +103,7 @@
 
 
 
-
-
-
-
-#### Hash Bucket Resizing
+### Hash Bucket Resizing
 
 * Default Bucket Size: 16
 * Default Threshold: 75% (Load Factor)

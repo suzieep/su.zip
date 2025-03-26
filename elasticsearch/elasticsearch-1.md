@@ -33,13 +33,13 @@ ex) ES 저장 Text : '여러개의 물건들'
     ㄴ 주로 정렬, 필터링에 사용
 ```
 
-#### Normalizer
+### Normalizer
 
 * Analyzer와 비슷하지만, token을 분리하지 않는 점이 다르다!!(Tokenizer X)
 * CharFilter, TokenFilter 일부 가능
   * lowercase 가능, stemming 같은 전체 형태소 분석 불가능
 
-#### Wildcard Query
+### Wildcard Query
 
 * 주로 keyword field에 사용
 * wildcard 문자: \*, ? 로 부분일치 검색 가능
@@ -87,7 +87,9 @@ Match Phrase Query + 마지막 단어 접두사로 취급해 부분 일치 검�
 
 
 
-### Reference
+## References
 
-https://esbook.kimjmin.net/06-text-analysis\
-https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/ https://discuss.elastic.co/t/difference-between-analyzer-and-normalizer/205897/2 https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer
+* [https://esbook.kimjmin.net/06-text-analysis](https://esbook.kimjmin.net/06-text-analysis)
+* [https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/](https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/)
+* [https://discuss.elastic.co/t/difference-between-analyzer-and-normalizer/205897/2](https://findstar.pe.kr/2018/01/19/understanding-query-on-elasticsearch/)
+* [https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer](https://stackoverflow.com/questions/71839329/how-to-remove-zero-terms-query-in-match-phrase-prefix-in-elasticsearch-from-quer)
