@@ -6,7 +6,7 @@
 
 * [Java가 Proxy를 생성하는 법](java/java-proxy.md)
 * [HashMap과 hashCode, equals](java/hashmap-hashcode-equals.md)
-* [ThreadLocal로 유저 정보 처리하기](java/threadlocal.md)
+* [ThreadLocal 유저 정보 처리 & 주의점](java/threadlocal-and.md)
 * [ObjectMapper로 제네릭 Deserialize 하기(TypeReference)](java/objectmapper-deserialize-typereference.md)
 
 ## Spring

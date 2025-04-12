@@ -1,8 +1,8 @@
-# ThreadLocal로 유저 정보 처리하기
+# ThreadLocal 유저 정보 처리 & 주의점
 
 ## Problem
 
-CRUD를 구현하다보면, api call을 한 유저 정보가 필요하다. 기존에 구현된 방식은 token이 들어오면 filter에서 토큰 정보를 parsing해서 api의 parameter에 조작해서 넣어주게 되어있었다.
+CRUD를 구현하다보면, api call을 한 유저 정보가 필요하다. 기존에 구현된 방식은 token이 들어오면 filter에서 토큰 정보를 parsing해 서 api의 parameter에 조작해서 넣어주게 되어있었다.
 
 이 방법으로 Controller에서 필요한 param을 Service method들로 넘겨주어 사용할 수 있었지만, 거의 모든 Service method에 parameter로 유저정보를 넘겨줘야해서 코드가 지저분해졌다.
 
@@ -51,6 +51,21 @@ public class UserContext {
 }
 ```
 
+## ThreadLocal 사용 후 반드시 반납하자!
+
+```java
+public static void clear() {
+    userHolder.remove();
+}
+```
+
+1. Memory Leak 주의\
+   \- ThreadLocal에 저장된 값이 GC되지 않고 계속 참조될 수 있음
+2. Thread Pool에서 Thread 재사용으로 이전 데이터가 그대로 남은 채로 사용 할 수 있음\
+   \- 민감 데이터 공유로 인한 보안 이슈 가능성
+
+
+
 ## Conclusion
 
 기존에는 Detail한 유저정보가 필요하면 그때마다 조회해서 사용했는데, filter에서 넣을 때 한번에 조회해서 UserInfo에 정보를 채워두면 언제든지 가져다 쓸 수 있어서 좋았다.
@@ -62,3 +77,5 @@ public class UserContext {
 ```
 
 이젠 ThreadLocal로 가지고 오면 되기 때문에, 이 annotation을 사용하기 위해서 어떤 셋팅이 필요한지 모르는 다른 개발자가 순서를 바꾸거나 누락하는 등 실수하는 위험을 막을 수 있었다!
+
+다만 스레드 로컬을 사용 후 반납하지 않으면 스레드 풀의 재사용으로 인해 데이터가 남거나 메모리 누수가 발생할 수 있으니 remove를 꼭 하도록 주의하자
