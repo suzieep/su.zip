@@ -4,8 +4,8 @@
 
 ## Java
 
-* [Java가 Proxy를 생성하는 법](java/java-proxy.md)
 * [HashMap과 hashCode, equals](java/hashmap-hashcode-equals.md)
+* [Java가 Proxy를 생성하는 법](java/java-proxy.md)
 * [ThreadLocal 유저 정보 처리 & 주의점](java/threadlocal-and.md)
 * [ObjectMapper로 제네릭 Deserialize 하기(TypeReference)](java/objectmapper-deserialize-typereference.md)
 
@@ -20,6 +20,6 @@
 
 ## Elasticsearch
 
-* [Elasticsearch 저장 방법](elasticsearch/elasticsearch.md)
-* [Elasticsearch 검색 방법](elasticsearch/elasticsearch-1.md)
-* [Match Phrase Prefix로 Path 검색](elasticsearch/match-phrase-prefix-path.md)
+* [Elasticsearch 저장(Indexing) 방법](elasticsearch/elasticsearch-indexing.md)
+* [Elasticsearch 검색 쿼리](elasticsearch/elasticsearch.md)
+* [Match Phrase Prefix로 Path 검색 구현](elasticsearch/match-phrase-prefix-path.md)

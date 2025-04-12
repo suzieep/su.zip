@@ -1,8 +1,8 @@
-# Match Phrase Prefix로 Path 검색
+# Match Phrase Prefix로 Path 검색 구현
 
 
 
-우선 Elasticsearch가 어떻게 [저장](elasticsearch.md)되고 [검색](elasticsearch-1.md)되는지는 앞 선 글에 더 자세하게 적어두었다
+우선 Elasticsearch가 어떻게 [저장](elasticsearch-indexing.md)되고 [검색](elasticsearch.md)되는지는 앞 선 글에 더 자세하게 적어두었다
 
 
 
